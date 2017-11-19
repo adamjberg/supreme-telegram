@@ -10,7 +10,7 @@ import (
 type OrganizationController struct {
 }
 
-func NewOrganizationController(router mux.Router) *OrganizationController {
+func NewOrganizationController(router *mux.Router) *OrganizationController {
 	c := new(OrganizationController)
 
 	s := router.PathPrefix("/organizations").Subrouter()
