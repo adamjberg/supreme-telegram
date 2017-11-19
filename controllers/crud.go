@@ -2,15 +2,24 @@ package controllers
 
 import (
 	"encoding/json"
+	"net/http"
 
 	"github.com/jinzhu/gorm"
 )
 
-func GetAll(models []gorm.Model, table *gorm.DB) ([]byte, error) {
+type CrudController interface {
+	GetTable() *gorm.DB
+	GetModel() gorm.Model
+	GetModels() []gorm.Model
+}
+
+func CrudGetAll(c CrudController, w http.ResponseWriter) {
+	models := c.GetModels()
+	table := c.GetTable()
 	table.Find(&models)
 	res, err := json.Marshal(models)
 	if err != nil {
-		return nil, err
+		w.WriteHeader(http.StatusInternalServerError)
 	}
-	return res, nil
+	w.Write(res)
 }
