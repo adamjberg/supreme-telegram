@@ -22,18 +22,18 @@ func NewOrganizationController(router mux.Router) *OrganizationController {
 	return c
 }
 
-func get(c *OrganizationController, w http.ResponseWriter, r *http.Request) {
+func (c *OrganizationController) get(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func getAll(c *OrganizationController, w http.ResponseWriter, r *http.Request) {
+func (c *OrganizationController) getAll(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func delete(c *OrganizationController, w http.ResponseWriter, r *http.Request) {
+func (c *OrganizationController) delete(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func create(c *OrganizationController, w http.ResponseWriter, r *http.Request) {
+func (c *OrganizationController) create(w http.ResponseWriter, r *http.Request) {
 
 }
