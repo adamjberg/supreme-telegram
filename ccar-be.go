@@ -7,6 +7,7 @@ import (
 	controllers "github.com/adamjberg/supreme-telegram/controllers"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 func main() {

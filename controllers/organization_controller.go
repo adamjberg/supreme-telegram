@@ -43,7 +43,11 @@ func (c *OrganizationController) get(w http.ResponseWriter, r *http.Request) {
 	model := models.Organization{
 		ID: uint(id),
 	}
-	c.table.First(&model, model)
+	get := c.table.First(&model, model)
+	if get.Error != nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
 	res, err := json.Marshal(model)
 	if err != nil {
 		fmt.Println(err)
