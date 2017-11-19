@@ -9,8 +9,8 @@ import (
 
 type CrudController interface {
 	GetTable() *gorm.DB
-	GetModel() gorm.Model
-	GetModels() []gorm.Model
+	GetModel() interface{}
+	GetModels() []interface{}
 }
 
 func CrudGetAll(c CrudController, w http.ResponseWriter) {
