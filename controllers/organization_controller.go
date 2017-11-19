@@ -38,7 +38,7 @@ func (c *OrganizationController) GetModel() models.Organization {
 	return models.Organization{}
 }
 
-func (c *OrganizationController) GetModel() []models.Organization {
+func (c *OrganizationController) GetModels() []models.Organization {
 	return []models.Organization{}
 }
 
